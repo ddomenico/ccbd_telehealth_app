@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ccbdtelehealthapp-dev-220626-authRole",
+      "UnauthRoleArn": "arn:aws:iam::509855282402:role/amplify-ccbdtelehealthapp-dev-220626-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::509855282402:role/amplify-ccbdtelehealthapp-dev-220626-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ccbdtelehealthapp-dev-220626-deployment",
+      "UnauthRoleName": "amplify-ccbdtelehealthapp-dev-220626-unauthRole",
+      "StackName": "amplify-ccbdtelehealthapp-dev-220626",
+      "StackId": "arn:aws:cloudformation:us-east-1:509855282402:stack/amplify-ccbdtelehealthapp-dev-220626/22a19770-7a93-11ed-8cc6-124ee01563c1",
+      "AmplifyAppId": "d91tjnhuf25s1"
+    },
+    "categories": {
+      "auth": {
+        "ccbdtelehealthappb176c522": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d91tjnhuf25s1",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}
