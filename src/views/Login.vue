@@ -16,7 +16,7 @@ import '@aws-amplify/ui-vue/styles.css';
         <div class="float-child">
             <authenticator>
                 <template v-slot="{ user, signOut }">
-                    <h1>Hello {{ user.username }}!</h1>
+                    <h1>Hello {{ user.username }} !</h1>
                     <button @click="signOut">Sign Out</button>
                 </template>
             </authenticator>
@@ -25,10 +25,16 @@ import '@aws-amplify/ui-vue/styles.css';
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'Login',
+  setup() {
+    const router = useRouter()
+  }
 }
+
 </script>
 
 <style>
