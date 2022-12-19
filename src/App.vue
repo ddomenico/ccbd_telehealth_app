@@ -2,7 +2,8 @@
   <div id="app">
         <div id="nav">
             <router-link to="/login">Home</router-link> |
-            <router-link to="/about">About</router-link>
+            <router-link to="/about">About</router-link> |
+            <router-link to="/profile/basicinfo">Profile</router-link>
         </div>
         <router-view />
     </div>
@@ -32,6 +33,7 @@ export default {
     background-color:cadetblue;
     width: 100%;
     text-align: left;
+    z-index: 1;
 }
 #nav a {
     font-weight: bold;
