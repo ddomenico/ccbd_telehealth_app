@@ -22,21 +22,35 @@
     
 <script>    
     import axios from 'axios'
+    import Auth from '@aws-amplify/auth'
+
     
     export default {
         name: 'patients',
         mounted(){
-            axios.get('https://dq9js2i730.execute-api.us-east-1.amazonaws.com/prod/doctor/' + this.$route.params.doctorID + '/getPatientTable')
-            .then(function(response)  { 
-                this.patients = response.data;
-                console.log(response.data);
-            }.bind(this)).catch(error => { 
-                console.log(error)
-            })   
+
+            Auth.currentUserInfo()
+            .then(res => {
+                this.userID = res.username;
+                console.log(this.userID);
+                
+                axios.get('https://dq9js2i730.execute-api.us-east-1.amazonaws.com/prod/doctor/' + this.userID + '/getPatientTable')
+                .then(function(response)  { 
+                    this.patients = response.data;
+                    console.log(response.data);
+                }.bind(this)).catch(error => { 
+                    console.log(error)
+                })   
+            })
+            .catch(err => {
+                console.error(err);
+            })
+
         },
         data() {
             return {       
-                patients: {}
+                patients: {},
+                userID: "",
             }
         },
     }

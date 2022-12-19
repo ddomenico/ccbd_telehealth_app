@@ -47,17 +47,17 @@ const routes = [
     name: 'about'
   },
   { 
-    path: '/:doctorID/appointments',
+    path: '/getAppointments',
     component: Appointments,
     name: 'appointments'
   },
   { 
-    path: '/:patientID/makeAppointment',
+    path: '/makeAppointment',
     component: MakeAppointment,
     name: 'makeAppointment'
   },
   { 
-    path: '/:doctorID/patientTable',
+    path: '/getPatientTable',
     component: PatientTable,
     name: 'patientTable'
   },
