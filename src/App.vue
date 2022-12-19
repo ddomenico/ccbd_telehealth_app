@@ -3,14 +3,38 @@
         <div id="nav">
             <router-link to="/login">Home</router-link> |
             <router-link to="/about">About</router-link> |
-            <router-link to="/profile/basicinfo">Profile</router-link>
+            <router-link to="/profile/basicinfo">Profile</router-link> |
+            <router-link to="/makeAppointment" v-if="role == 'patient'">Make Appointment |</router-link>
+            <router-link to="/getAppointments" v-if="role == 'doctor'">Get Appointment |</router-link>
+            <router-link to="/getPatientTable" v-if="role == 'doctor'">Get Patient Table |</router-link>
+            
         </div>
         <router-view />
     </div>
 </template>
 
 <script>
+import Auth from '@aws-amplify/auth'
+
 export default {
+    name: "userID",
+    mounted() {
+        Auth.currentUserInfo()
+        .then(res => {
+            this.userID = res.username;
+            this.role = res.attributes["custom:role"];
+            console.log(this.role, this.userID);
+        })
+        .catch(err => {
+            console.error(err);
+        })
+    },
+    data() {
+        return {
+            userID: 0,
+            role: ""
+        }
+    }
 }
 </script>
 
