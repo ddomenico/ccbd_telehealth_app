@@ -6,6 +6,7 @@ import Login from './views/Login.vue'
 import Lost from './views/Lost.vue'
 import Appointments from './views/Appointments.vue'
 import MakeAppointment from './views/MakeAppointment.vue'
+import PatientProfile from './views/PatientProfile.vue'
 import PatientTable from './views/PatientTable.vue'
 import Profile from './views/Profile.vue'
 import Allergy from './views/Allergy.vue'
@@ -60,6 +61,11 @@ const routes = [
     path: '/getPatientTable',
     component: PatientTable,
     name: 'patientTable'
+  },
+  { 
+    path: '/patient/:patientID/report',
+    component: PatientProfile,
+    name: 'patientProfile'
   },
   { 
     path: '/profile',
