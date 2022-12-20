@@ -64,7 +64,7 @@ const routes = [
     name: 'patientTable'
   },
   { 
-    path: '/patient/:patientID/report',
+    path: '/patient-:patientID-report',
     component: PatientProfile,
     name: 'patientProfile'
   },
@@ -112,7 +112,7 @@ const routes = [
   },
   {
     path: '/:pathMatch(.*)*',
-    component: Lost
+    component: Login
   },
 ]
 
