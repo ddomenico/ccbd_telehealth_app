@@ -12,7 +12,7 @@
                     <tbody>
                       <tr v-for="patient in patients">
                         <td>{{patient.name}}</td>
-                        <td><a :href="'/patient/' + patient.patient_id + '/report'">Report Link</a></td>
+                        <td><a :href="'/patient-' + patient.patient_id + '-report'">Report Link</a></td>
                       </tr>
                     </tbody>
                   </table>
