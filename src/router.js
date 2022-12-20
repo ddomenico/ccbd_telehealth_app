@@ -15,6 +15,7 @@ import FamilyHistory from './views/FamilyHistory.vue'
 import Immunization from './views/Immunization.vue'
 import Medication from './views/Medication.vue'
 import Chatbot from './views/Chatbot.vue'
+import PatientAppointment from './views/patientAppointments.vue'
 
 const ifNotAuthenticated = (to, from, next) => {
   //   if (!store.getters.isAuthenticated) {
@@ -66,6 +67,11 @@ const routes = [
     path: '/patient/:patientID/report',
     component: PatientProfile,
     name: 'patientProfile'
+  },
+  {
+    path: '/myAppointments',
+    component: PatientAppointment,
+    name: 'patientAppointments'
   },
   { 
     path: '/profile',

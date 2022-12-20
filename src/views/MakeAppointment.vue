@@ -3,9 +3,11 @@
             <h2>Make Appointment</h2>
             <div>
                 <input type="date" v-model="input.date" />
-                <input type="time" v-model="input.time" />
-                <input type="text" v-model="input.doctor" placeholder="Doctor Name"/>
-                <input type="text" v-model="input.reason" placeholder="Reason"/>
+                <input type="time" v-model="input.time" /> <br>
+                Doctor Name <br>
+                <input type="text" v-model="input.doctor" placeholder="Doctor Name"/> <br>
+                Reason <br>
+                <input type="text" v-model="input.reason" placeholder="Reason"/> <br>
                 
                 <button v-on:click="submit()">Submit</button>
             </div>
