@@ -110,14 +110,14 @@ footer {
 header {
   /* padding: 48px; */
     display: block;
-    padding-top: 15%;
+    padding-top: 10%;
 
 }
 
 
 @media (max-width: 440px) {
   header {
-    padding: 48px 24px;
+    /* padding: 48px 24px; */
   }
 }
 header > h3 {
@@ -153,6 +153,7 @@ main {
 
 #subnav {
     color: #2c3e50;
+    
     /* position: fixed; */
 }
 
@@ -167,8 +168,11 @@ main {
 
 .subnav-area {
     position: fixed;
-    padding-left: 20%;
-    padding-top: 5%;
+    width: 100%;
+    background-color: #7BACAE;
+    top: 8%;
+    left: 0;
+    padding: 10px;
     z-index: 1;
 }
 
@@ -179,6 +183,7 @@ main {
     
     text-align: left;
     padding-left: 30%;
+    padding-top: 2%;
 
 }
 
@@ -206,8 +211,9 @@ main {
   font-weight: 700;
   color: #2c3e50;
   letter-spacing: 1px;
-  padding: 8px 48px;
+  padding: 8px 48px 8px 48px;
   margin-top: 32px;
+  margin-bottom: 32px;
   border: 2px solid #2c3e50;
   border-radius: 20px;
   cursor: pointer;
