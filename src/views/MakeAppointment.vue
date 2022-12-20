@@ -15,14 +15,25 @@
     
 <script>    
     import axios from 'axios'
+    import Auth from '@aws-amplify/auth'
+
     
     export default {
         name: 'appointments',
         mounted(){
             this.input.date = "2022-12-20",
             this.input.time = "15:00",
-            this.input.doctor = "123",
+            this.input.doctor = "Frank Yang",
             this.input.reason = "Fever"
+
+            Auth.currentUserInfo()
+            .then(res => {
+                this.userID = res.username;
+                console.log(this.userID);
+            })
+            .catch(err => {
+                console.error(err);
+            })
         },
         data() {
             return {
@@ -32,7 +43,8 @@
                     doctor: "",
                     reason: ""
                 },
-                status: ""
+                status: "",
+                userID: ""
             }
         },
         methods: {
@@ -44,7 +56,7 @@
                 "reason": this.input.reason
             };
             console.log(data);
-            var url = "https://dq9js2i730.execute-api.us-east-1.amazonaws.com/prod/patient/" + this.$route.params.patientID + "/makeAppointment";
+            var url = "https://dq9js2i730.execute-api.us-east-1.amazonaws.com/prod/patient/" + this.userID + "/makeAppointment";
             axios.post(url, data)
             .then(function(response)  { 
                 console.log(response)
