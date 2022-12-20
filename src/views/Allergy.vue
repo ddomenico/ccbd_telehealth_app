@@ -61,6 +61,7 @@
 import Datepicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 import { Amplify, API } from 'aws-amplify';
+import Auth from '@aws-amplify/auth'
 
 Amplify.configure({
     API: {
@@ -75,11 +76,21 @@ Amplify.configure({
 
 export default {
         components: { Datepicker },
+        mounted() {
+            Auth.currentUserInfo()
+                .then(res => {
+                    this.userData.id = res.username;
+                    console.log(this.userData.id);
+                })
+                .catch(err => {
+                console.error(err);
+                })
+        },
         data() {
             return {
                 section: 'allergies',
                 userData: {
-                    id: '12345678',
+                    id: '',
                     name: '',
                     onset_date: null,
                     reactions: '',

@@ -33,6 +33,7 @@
 <script>
 
 import { Amplify, API } from 'aws-amplify';
+import Auth from '@aws-amplify/auth'
 
 Amplify.configure({
     API: {
@@ -48,6 +49,16 @@ Amplify.configure({
 
 export default {
     name: 'HelloWorld',
+    mounted() {
+            Auth.currentUserInfo()
+                .then(res => {
+                    this.patientID = res.username;
+                    console.log(this.patientID);
+                })
+                .catch(err => {
+                console.error(err);
+                })
+        },
     computed: {
         date(){
         const d = new Date()
@@ -204,13 +215,14 @@ export default {
     padding: 4px 20px;
   }
   button {
-    padding: 8px 48px;
+
     width: 18%;
     border: 2px solid #2c3e50;
     border-radius: 20px;
     cursor: pointer;
     color: #2c3e50;
     transition: all ease .2s;
+
   }
 
 
