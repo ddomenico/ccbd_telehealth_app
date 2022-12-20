@@ -1,4 +1,5 @@
 <template>
+    <div class="profile">
     <div class="row">
       <div class="column">
         <user-card>
@@ -9,11 +10,10 @@
         </patient-info-block>
       </div>
     </div>
-    <div class="row">
-      <div class="column">
+    <div class="column">
         <patient-data-block>
         </patient-data-block>
-      </div>
+    </div>
     </div>
 </template>
 
@@ -39,6 +39,9 @@ export default {
 </script>
 
 <style>
+.profile{
+  padding-top: 10%;
+}
 :root {
   --ms-main-color: #70bcff;
   --ms-tag-color: var(--ms-main-color);

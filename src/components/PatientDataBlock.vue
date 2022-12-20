@@ -1,5 +1,6 @@
 <template>
   <card class="card" title="Edit Profile">
+    <hr>
     <div class="sensor-data">
         <h2>Sensor Data:</h2>
         <div>
@@ -123,9 +124,9 @@ export default {
 </script>
 <style>
 .sensor-data {
-  text-align: right;
+  /* text-align: right; */
 }
 .vitals-data {
-  text-align: right;
+  /* text-align: right; */
 }
 </style>
